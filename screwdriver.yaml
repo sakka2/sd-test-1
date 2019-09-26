@@ -6,7 +6,7 @@ jobs:
     steps:
       - echo: echo test
   make_false:
-    requires: [ default_false ]
+    requires: [ ~pr, ~commit ]
     environment:
       SD_COVERAGE_PLUGIN_ENABLED: false
     steps:
