@@ -1,0 +1,13 @@
+shared:
+  image: node:8
+jobs:
+  default_true:
+    requires: [ ~pr, ~commit ]
+    steps:
+      - echo: echo test
+  make_false:
+    requires: [ default_false ]
+    environment:
+      SD_COVERAGE_PLUGIN_ENABLED: false
+    steps:
+      - echo: echo test
